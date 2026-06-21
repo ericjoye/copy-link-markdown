@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copy as Markdown Link — Chrome Extension</title>
+<meta name="description" content="Copy as Markdown Link — Chrome extension that copies the current page title + URL as a Markdown [title](url) link with one click.">
+<meta property="og:title" content="Copy as Markdown Link — One-Click Markdown Links">
+<meta property="og:description" content="Copy any page as a Markdown link with one click. Clean titles, zero dependencies, privacy-first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/forgecraft.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#" class="brand">
+      <div class="logo-mark"></div>
+      Forgecraft
+      <span class="product-name">/ copy-link-markdown</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#install">Install</a></li>
+      <li><a href="https://github.com/ericjoye/copy-link-markdown" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="#install" class="nav-cta">Install Extension</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="badge">Chrome Extension · Zero Dependencies</div>
+    <h1>Copy Any Page as a<br><span>Markdown Link</span></h1>
+    <p class="tagline">One click copies the current page title + URL as <code style="color:var(--primary)">[title](url)</code>. Clean titles, zero dependencies, privacy-first.</p>
+    <div class="cta-group">
+      <a href="#install" class="btn btn-primary">Install Extension</a>
+      <a href="https://github.com/ericjoye/copy-link-markdown" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+    <div class="demo-box">
+      <div style="display:flex;align-items:center;gap:12px;padding:16px;background:var(--bg);border:1px solid var(--border);border-radius:8px;margin-bottom:16px">
+        <div style="width:32px;height:32px;background:var(--primary-glow);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem">📄</div>
+        <div>
+          <div style="font-weight:600;font-size:0.95rem">Python sqlite3 docs — FTS5 reference</div>
+          <div style="color:var(--text-muted);font-size:0.8rem">https://docs.python.org/3/library/sqlite3.html</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+        <code style="flex:1;font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--success)">[Python sqlite3 docs — FTS5 reference](https://docs.python.org/3/library/sqlite3.html)</code>
+        <span style="background:var(--primary);color:#fff;padding:4px 12px;border-radius:6px;font-size:0.8rem;font-weight:600">Copied!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-header">
+      <h2>Features</h2>
+      <p>Everything you need to copy Markdown links, nothing you don't.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">🖱️</div>
+        <h3>One-Click Toolbar Button</h3>
+        <p>Click the extension icon on any page to instantly copy <code style="color:var(--primary)">[title](url)</code> to your clipboard.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📋</div>
+        <h3>Context Menu</h3>
+        <p>Right-click anywhere → "Copy as Markdown link" or right-click a specific link to copy that URL.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">✨</div>
+        <h3>Title Cleanup</h3>
+        <p>Automatically strips common site suffixes like " - YouTube", " | Medium" for clean link text.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔔</div>
+        <h3>Visual Feedback</h3>
+        <p>Badge flashes "Copied!" on the toolbar icon for 1.5 seconds so you know it worked.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3>Zero Dependencies</h3>
+        <p>Pure Chrome APIs, ~60 lines of JavaScript. No frameworks, no build step, no tracking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <h2>How It Works</h2>
+      <p>Three ways to copy a Markdown link.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Toolbar Click</h4>
+        <p>Click the extension icon on any page. Done.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Context Menu</h4>
+        <p>Right-click → "Copy as Markdown link" on any page.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Link Context</h4>
+        <p>Right-click a specific link → "Copy link as Markdown".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="install" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-header">
+      <h2>Installation</h2>
+      <p>Load in developer mode — takes 30 seconds.</p>
+    </div>
+    <div class="install-steps">
+      <div class="install-step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Open Extensions</strong><br>Go to <code>chrome://extensions/</code> in Chrome.</div>
+      </div>
+      <div class="install-step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Enable Developer Mode</strong><br>Toggle the switch in the top-right corner.</div>
+      </div>
+      <div class="install-step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Load Unpacked</strong><br>Click "Load unpacked" and select the <code>copy-link-markdown/</code> folder.</div>
+      </div>
+      <div class="install-step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Done!</strong><br>The icon appears in your toolbar. Start copying Markdown links.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-brand">
+      <div class="logo-mark"></div>
+      <span class="logo-text">Forgecraft</span>
+    </div>
+    <p class="footer-brand-sub">Tools worth building on.</p>
+    <div class="footer-links">
+      <a href="https://github.com/ericjoye/copy-link-markdown" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/ericjoye/copy-link-markdown/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+      <a href="mailto:eric@ericjoye.com">Support</a>
+    </div>
+    <p>&copy; 2026 Forgecraft. Open source under MIT License.</p>
+  </div>
+</footer>
+
+</body>
+</html>

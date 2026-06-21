@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copy as Markdown Link — Screenshot Mockup</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #1e1e2e;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 40px;
+  }
+  .browser-chrome {
+    width: 800px;
+    background: #2d2d3d;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  }
+  .browser-bar {
+    background: #1f1f30;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .browser-dots { display: flex; gap: 6px; }
+  .browser-dots span { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red { background: #ff5f57; }
+  .dot-yellow { background: #febc2e; }
+  .dot-green { background: #28c840; }
+  .browser-url {
+    flex: 1;
+    background: #16161e;
+    border-radius: 8px;
+    padding: 6px 14px;
+    color: #8888a0;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .browser-url .lock { color: #28c840; font-size: 12px; }
+  .browser-ext-icon {
+    width: 20px; height: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: white; font-weight: bold;
+    position: relative;
+  }
+  .browser-ext-icon .badge {
+    position: absolute;
+    top: -6px; right: -6px;
+    background: #28c840;
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 10px;
+    animation: badgePop 0.3s ease-out;
+    box-shadow: 0 2px 8px rgba(40,200,64,0.4);
+  }
+  @keyframes badgePop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
+  .page-content {
+    background: #ffffff;
+    padding: 30px 40px;
+    min-height: 200px;
+    position: relative;
+  }
+  .page-content h1 { color: #1a1a2e; font-size: 22px; margin-bottom: 8px; }
+  .page-content p { color: #555; font-size: 14px; line-height: 1.6; }
+  .page-content a { color: #667eea; }
+  /* Extension Popup */
+  .ext-popup {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 340px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.08);
+    overflow: hidden;
+    animation: popIn 0.2s ease-out;
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.95) translateY(-4px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .popup-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .popup-header .icon {
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .popup-header .title {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    flex: 1;
+  }
+  .popup-header .version {
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+  }
+  .popup-body { padding: 16px 18px; }
+  .result-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .markdown-result {
+    background: #f8f9fb;
+    border: 1px solid #e8eaed;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    color: #1a73e8;
+    word-break: break-all;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .markdown-result .bracket { color: #888; }
+  .markdown-result .text { color: #1a73e8; }
+  .markdown-result .url { color: #188038; }
+  .copy-btn {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.15s;
+  }
+  .copy-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+  .copy-btn.copied { background: #28c840; }
+  .page-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  .page-info .favicon {
+    width: 16px; height: 16px;
+    background: #667eea;
+    border-radius: 3px;
+  }
+  .page-info .page-title {
+    font-size: 12px;
+    color: #374151;
+    font-weight: 500;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .page-info .cleaned {
+    font-size: 10px;
+    color: #22c55e;
+    background: #dcfce7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .popup-footer {
+    padding: 10px 18px;
+    background: #f8f9fb;
+    border-top: 1px solid #e8eaed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .popup-footer span {
+    font-size: 11px;
+    color: #999;
+  }
+  .popup-footer .shortcut {
+    background: #e8eaed;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    color: #666;
+    font-family: monospace;
+  }
+  .toast {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a2e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    animation: toastUp 0.3s ease-out;
+  }
+  @keyframes toastUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  .toast .check { color: #28c840; font-size: 16px; }
+</style>
+</head>
+<body>
+<div class="browser-chrome">
+  <div class="browser-bar">
+    <div class="browser-dots">
+      <span class="dot-red"></span>
+      <span class="dot-yellow"></span>
+      <span class="dot-green"></span>
+    </div>
+    <div class="browser-url">
+      <span class="lock">🔒</span>
+      <span>medium.com/@johndoe/building-scalable-react-applications-with-typescript-2024</span>
+    </div>
+    <div class="browser-ext-icon">
+      M
+      <span class="badge">Copied!</span>
+    </div>
+  </div>
+  <div class="page-content">
+    <h1>Building Scalable React Applications with TypeScript in 2024</h1>
+    <p>A comprehensive guide to architecting large-scale React applications using TypeScript, covering project structure, state management patterns, and performance optimization techniques.</p>
+    <br>
+    <p>By <a href="#">John Doe</a> · Published June 15, 2024 · 12 min read</p>
+
+    <!-- Extension Popup -->
+    <div class="ext-popup">
+      <div class="popup-header">
+        <div class="icon">M</div>
+        <div class="title">Copy as Markdown Link</div>
+        <div class="version">v0.1.0</div>
+      </div>
+      <div class="popup-body">
+        <div class="page-info">
+          <div class="favicon"></div>
+          <div class="page-title">Building Scalable React Applications with TypeScript in 2024</div>
+          <div class="cleaned">Cleaned ✓</div>
+        </div>
+        <div class="result-label">Markdown Link</div>
+        <div class="markdown-result">
+          <span class="text">Building Scalable React Applications with TypeScript in 2024</span><span class="bracket">(</span><span class="url">https://medium.com/@johndoe/building-scalable-react-applications-with-typescript-2024</span><span class="bracket">)</span>
+        </div>
+        <button class="copy-btn copied">
+          ✅ Copied to Clipboard
+        </button>
+      </div>
+      <div class="popup-footer">
+        <span>Title suffix " | Medium" was stripped</span>
+        <span class="shortcut">Ctrl+Shift+M</span>
+      </div>
+    </div>
+
+    <div class="toast">
+      <span class="check">✅</span>
+      Markdown link copied to clipboard!
+    </div>
+  </div>
+</div>
+</body>
+</html>
