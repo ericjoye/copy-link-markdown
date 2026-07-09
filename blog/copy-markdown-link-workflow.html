@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="A simple Markdown link workflow for developers and researchers using Chrome.">
+  <meta name="keywords" content="markdown workflow, chrome extension, copy link, notes, research, developer workflow">
+  <meta property="og:title" content="A Simple Markdown Link Workflow for Chrome">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ericjoye.github.io/copy-link-markdown/">
+  <title>A Simple Markdown Link Workflow for Chrome</title>
+  <style>
+    body { font-family: -apple-system, system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 20px; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+    article { margin: 40px 0; }
+    h1, h2, h3 { color: #58a6ff; }
+    .meta { color: #8b949e; font-size: 0.9em; margin-bottom: 24px; }
+    .cta-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; margin: 32px 0; text-align: center; }
+    .cta-box h3 { margin-top: 0; }
+    .cta-box a { display: inline-block; background: #238636; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 12px; }
+    .cta-box a:hover { background: #2ea043; }
+    code { background: #161b22; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    pre { background: #161b22; padding: 16px; border-radius: 8px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <article>
+    <h1>A Simple Markdown Link Workflow for Chrome</h1>
+    <div class="meta">July 9, 2026 · 4 min read</div>
+
+    <p>The most common Markdown mistake is also the easiest to prevent: pasting a raw URL and never returning to clean it up. A repeatable link-copy workflow helps developers, researchers, and writers keep notes readable without context switching.</p>
+
+    <h2>The usual copy-paste problem</h2>
+    <p>Most browsers expose the page URL through the address bar or a context menu. That gives you the destination, but not a formatted Markdown link. The next steps are predictable: copy the title, switch back, type brackets, and hope the title is clean enough.</p>
+
+    <h2>A tighter loop</h2>
+    <p>A small Chrome extension can collapse those steps into one action. Instead of manual assembly, you get <code>[page title](page url)</code> directly in the clipboard. The result can then be pasted into Obsidian, GitHub, Slack, email, or any editor that understands Markdown.</p>
+
+    <h2>What makes the workflow stick</h2>
+    <ul>
+      <li><strong>Immediate feedback</strong> — a short badge confirmation means you know the copy succeeded before switching apps</li>
+      <li><strong>Clean titles by default</strong> — common suffixes from video platforms and blogs are stripped automatically</li>
+      <li><strong>Context menu fallback</strong> — when you are already focused on a link or page, right-click is often faster than reaching for the toolbar</li>
+    </ul>
+
+    <h2>Who benefits most</h2>
+    <p>Developers writing README files and issue comments, researchers collecting references, technical writers assembling docs, and anyone who keeps an Obsidian or Notion knowledge base. If your day includes more than a handful of Markdown links, reducing the per-link overhead adds up.</p>
+
+    <h2>What to avoid</h2>
+    <p>Heavier tooling is not always better. Sync, history, tags, and analytics are useful in some products, but for a single-text clipboard action they add complexity without changing the output. The useful metric here is whether the link is formatted correctly on the first paste.</p>
+
+    <div class="cta-box">
+      <h3>Copy as Markdown Link</h3>
+      <p>A 5KB Chrome extension that copies [title](url) in one click.</p>
+      <a href="https://github.com/ericjoye/copy-link-markdown">View on GitHub →</a>
+    </div>
+
+    <p><a href="/copy-link-markdown/blog/" style="color: #8b949e;">← Back to articles</a></p>
+  </article>
+</body>
+</html>
