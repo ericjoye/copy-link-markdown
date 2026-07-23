@@ -2,7 +2,8 @@
 
 **A zero-dependency Chrome extension** that copies the current page title + URL as a Markdown `[title](url)` link with one click.
 
-[![Landing Page](https://img.shields.io/badge/landing-page-6366f1)](https://copy-link-markdown.vercel.app)
+[![Landing Page](https://img.shields.io/badge/landing-page-6366f1)](https://copy-link-markdown.vercel.app/)
+[![Chrome Web Store](https://img.shields.io/badge/chrome-web--store-4285F4)](https://chromewebstore.google.com/detail/copy-as-markdown/fkeaekngjflipcockcnpobkpbbfbhmdn)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Chrome Manifest V3](https://img.shields.io/badge/manifest-v3-blue)](manifest.json)
 
