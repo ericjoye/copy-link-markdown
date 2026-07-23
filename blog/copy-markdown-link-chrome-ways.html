@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="How to copy a page title and URL as a Markdown link [title](url) in Chrome — with a free extension, bookmarklet, or manual method. Stop typing brackets.">
+  <meta name="keywords" content="copy markdown link, chrome extension copy link, markdown link generator, copy title url as markdown, markdown link shortcut, chromebook copy markdown">
+  <meta property="og:title" content="3 Ways to Copy a Markdown Link [title](url) in Chrome">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ericjoye.github.io/copy-link-markdown/blog/copy-markdown-link-chrome-ways.html">
+  <title>3 Ways to Copy a Markdown Link [title](url) in Chrome</title>
+  <style>
+    body { font-family: -apple-system, system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 20px; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+    article { margin: 40px 0; }
+    h1, h2, h3 { color: #58a6ff; }
+    .meta { color: #8b949e; font-size: 0.9em; margin-bottom: 24px; }
+    .cta-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; margin: 32px 0; text-align: center; }
+    .cta-box h3 { margin-top: 0; }
+    .cta-box a { display: inline-block; background: #238636; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 12px; }
+    .cta-box a:hover { background: #2ea043; }
+    code { background: #161b22; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    pre { background: #161b22; padding: 16px; border-radius: 8px; overflow-x: auto; border: 1px solid #30363d; }
+    ul, ol { padding-left: 24px; }
+    li { margin: 8px 0; }
+    a { color: #58a6ff; }
+  </style>
+</head>
+<body>
+<article>
+  <h1>3 Ways to Copy a Markdown Link [title](url) in Chrome</h1>
+  <p class="meta">July 23, 2026 · 3 min read · <a href="/copy-link-markdown/blog/index.html">← Blog</a></p>
+
+  <p>If you write Markdown — in GitHub, Obsidian, Notion, or any docs — you know the pain of manually constructing links.</p>
+
+  <p>The typical workflow goes: highlight the URL, copy it, go back for the page title, retype it from memory, then type <code>[](</code> and <code>)</code> around everything. It's a tiny friction that adds up when you do it dozens of times a day.</p>
+
+  <p>Here are three ways to copy a Markdown-formatted <code>[title](url)</code> link in Chrome, from fastest to simplest.</p>
+
+  <h2>Method 1: Chrome Extension (1 click, fastest)</h2>
+
+  <p>The <a href="https://chromewebstore.google.com/detail/copy-as-markdown/fkeaekngjflipcockcnpobkpbbfbhmdn">Copy as Markdown Link</a> extension adds a toolbar button that copies the current page as a Markdown link with one click. It also adds a right-click context menu option — right-click anywhere and choose "Copy as Markdown link," or right-click a specific link and choose "Copy link as Markdown."</p>
+
+  <p>Features:</p>
+  <ul>
+    <li><strong>One click:</strong> Click the toolbar icon → <code>[title](url)</code> is on your clipboard</li>
+    <li><strong>Right-click support:</strong> Context menu on any page or specific link</li>
+    <li><strong>Title cleanup:</strong> Automatically strips " - YouTube", " | Medium", " — GitHub" etc.</li>
+    <li><strong>Visual feedback:</strong> Badge flashes "Copied!" for 1.5 seconds</li>
+    <li><strong>Zero dependencies:</strong> 5KB, vanilla JS, no network calls, no tracking</li>
+  </ul>
+
+  <div class="cta-box">
+    <h3>Install in one click</h3>
+    <p>Free, open source, Manifest V3.</p>
+    <a href="https://chromewebstore.google.com/detail/copy-as-markdown/fkeaekngjflipcockcnpobkpbbfbhmdn">Add to Chrome — Free</a>
+    <p style="margin-top:8px;font-size:0.85em;color:#8b949e;">Chrome Web Store · 5KB · No tracking</p>
+  </div>
+
+  <h2>Method 2: Bookmarklet (no install required)</h2>
+
+  <p>If you can't install extensions, a bookmarklet is the next best thing. Drag this link to your bookmarks bar, then click it on any page to copy a Markdown link:</p>
+
+  <p><strong>Copy as Markdown</strong> — drag to bookmarks bar:</p>
+
+  <pre>javascript:(function(){var t=document.title.replace(/ - [^-]+$| \| [^|]+$| — [^—]+$/g,'').trim();navigator.clipboard.writeText('['+t+']('+location.href+')');alert('Copied: ['+t+']('+location.href+')')})();</pre>
+
+  <p>This mini bookmarklet reads the page title (cleaned), grabs the URL, formats it as <code>[title](url)</code>, and writes it to your clipboard. Works in any Chromium browser without any installation.</p>
+
+  <h2>Method 3: Manual (no tools, basic browser skills)</h2>
+
+  <p>The manual method takes about 10 seconds:</p>
+  <ol>
+    <li>Select the page title text</li>
+    <li>Copy it (Ctrl+C or Cmd+C)</li>
+    <li>Type <code>[</code></li>
+    <li>Paste the title (Ctrl+V)</li>
+    <li>Type <code>](</code></li>
+    <li>Copy the URL from the address bar</li>
+    <li>Paste the URL</li>
+    <li>Type <code>)</code></li>
+    <li>Copy the whole result</li>
+  </ol>
+
+  <p>It works, but it's tedious. If you do this more than 5 times a day, the extension will save you hours over a year.</p>
+
+  <h2>Why Markdown Links Matter</h2>
+
+  <p>Markdown links are the standard for cross-referencing in developer documentation. GitHub READMEs, Stack Overflow answers, Notion pages, Obsidian notes, and Slack messages all use <code>[text](url)</code> syntax. Having a one-click way to produce properly formatted links makes writing documentation and taking research notes significantly faster.</p>
+
+  <h2>Which Method Should You Use?</h2>
+
+  <ul>
+    <li><strong>Developers & researchers:</strong> Install the <a href="https://chromewebstore.google.com/detail/copy-as-markdown/fkeaekngjflipcockcnpobkpbbfbhmdn">extension</a> — it's 5KB, free, and works everywhere</li>
+    <li><strong>Occasional users:</strong> Use the bookmarklet — no install, works in any browser</li>
+    <li><strong>One-off:</strong> Manual method works in a pinch</li>
+  </ul>
+
+  <p>The extension is <a href="https://github.com/ericjoye/copy-link-markdown">open source on GitHub</a> under MIT license. You can inspect every line of code — it's about 60 lines of vanilla JavaScript.</p>
+
+</article>
+</body>
+</html>
