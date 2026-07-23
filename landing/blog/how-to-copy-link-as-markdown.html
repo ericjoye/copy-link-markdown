@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Copy a Link as Markdown — Quick Guide for Chrome Users</title>
+<meta name="description" content="Learn how to copy any page title + URL as a Markdown [title](url) link in Chrome. Three methods, including the fastest one-click extension approach.">
+<link rel="canonical" href="https://copy-link-markdown.vercel.app/blog/how-to-copy-link-as-markdown.html">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 20px; line-height: 1.7; color: #e2e8f0; background: #0f172a; }
+  h1 { font-size: 2rem; margin-bottom: 8px; }
+  h2 { font-size: 1.5rem; margin-top: 40px; }
+  p, li { color: #94a3b8; }
+  a { color: #6366f1; }
+  code { background: #1e293b; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  .cta { display: inline-block; background: #6366f1; color: #fff; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 20px 0; }
+  .meta { color: #64748b; font-size: 0.9rem; margin-bottom: 32px; }
+  pre { background: #1e293b; padding: 16px; border-radius: 8px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>How to Copy a Link as Markdown in Chrome — 3 Methods</h1>
+<p class="meta">Published July 23, 2026 · Chrome tips</p>
+
+<p>Markdown links follow the format <code>[display text](url)</code>. They're the standard way to reference web pages in Obsidian notes, GitHub issues, READMEs, Slack messages, Notion docs, and developer documentation.</p>
+
+<p>The problem? Chrome doesn't have a native "copy as Markdown link" option. The default "Copy link address" only copies the raw URL. Here are three ways to get a Markdown-formatted link, from fastest to most manual.</p>
+
+<h2>Method 1: Chrome Extension (Fastest — One Click)</h2>
+<p>The fastest way to copy a link as Markdown is a lightweight Chrome extension like <a href="https://copy-link-markdown.vercel.app/">Copy as Markdown Link</a>. Install it, click the toolbar icon, and <code>[Page Title](url)</code> is on your clipboard instantly.</p>
+
+<h3>Install in 30 seconds:</h3>
+<ol>
+  <li>Go to the <a href="https://chromewebstore.google.com/detail/copy-as-markdown/fkeaekngjflipcockcnpobkpbbfbhmdn">Chrome Web Store listing</a></li>
+  <li>Click "Add to Chrome"</li>
+  <li>Click the extension icon on any page → Markdown link copied</li>
+</ol>
+
+<p>Alternatively, install from source (developer mode):</p>
+<ol>
+  <li><a href="https://copy-link-markdown.vercel.app/copy-link-markdown.zip">Download the ZIP</a> and unzip</li>
+  <li>Open <code>chrome://extensions/</code></li>
+  <li>Enable Developer mode (top-right toggle)</li>
+  <li>Click "Load unpacked" → select the folder</li>
+</ol>
+
+<p>The extension also adds a right-click context menu option — "Copy as Markdown link" — so you don't even need the toolbar.</p>
+
+<h2>Method 2: Bookmarklet (No Install, No Extension)</h2>
+<p>If you'd rather not install any extension, you can use a bookmarklet. Create a new bookmark in Chrome and paste this as the URL:</p>
+<pre><code>javascript:(function(){var t=document.title.replace(/\s*[-—|]\s*(YouTube|Medium|GitHub|HN|Reddit).*$/,'').trim();navigator.clipboard.writeText('['+t+']('+location.href+')')})();</code></pre>
+<p>Click the bookmark on any page to copy a Markdown link to your clipboard.</p>
+<p><strong>Tradeoff:</strong> No visual feedback, no context menu, no link-specific copy (only copies the current page). Won't work on <code>chrome://</code> pages.</p>
+
+<h2>Method 3: Manual (No Tools Required)</h2>
+<p>If you only copy a Markdown link once in a while, manual works:</p>
+<ol>
+  <li>Highlight the page title in the tab or page</li>
+  <li>Copy it (Ctrl+C / Cmd+C)</li>
+  <li>Press Ctrl+L / Cmd+L to focus the address bar</li>
+  <li>Copy the URL (Ctrl+C / Cmd+C)</li>
+  <li>Type <code>[</code>, paste title (Ctrl+V / Cmd+V)</li>
+  <li>Type <code>](</code>, paste URL (Ctrl+V / Cmd+V)</li>
+  <li>Type <code>)</code></li>
+</ol>
+<p>That's seven actions per link. At 20 links per day, that's 140 extra key presses. Do the math for a year.</p>
+
+<h2>Why Bother with Markdown Links?</h2>
+<p>Markdown links are portable. Unlike rich-text links that lose formatting when pasted into different apps, <code>[title](url)</code> works everywhere:</p>
+<ul>
+  <li><strong>Obsidian:</strong> Paste a Markdown link and it renders as a clickable link in preview mode</li>
+  <li><strong>GitHub:</strong> Issues, PRs, READMEs, wikis — all render Markdown links</li>
+  <li><strong>Slack:</strong> Send <code>[title](url)</code> and it auto-formats</li>
+  <li><strong>Discord:</strong> Same behavior — pastes as a nicely formatted link</li>
+  <li><strong>Email:</strong> Most email clients preserve Markdown formatting</li>
+</ul>
+
+<h2>Which Method Should You Use?</h2>
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="border-bottom: 1px solid #334155;">
+    <th style="text-align:left; padding: 8px;">Method</th>
+    <th style="text-align:left; padding: 8px;">Speed</th>
+    <th style="text-align:left; padding: 8px;">Best for</th>
+  </tr>
+  <tr style="border-bottom: 1px solid #1e293b;">
+    <td style="padding: 8px;">Extension</td>
+    <td style="padding: 8px;">1 click</td>
+    <td style="padding: 8px;">Daily users (10+ links/day)</td>
+  </tr>
+  <tr style="border-bottom: 1px solid #1e293b;">
+    <td style="padding: 8px;">Bookmarklet</td>
+    <td style="padding: 2 clicks</td>
+    <td style="padding: 8px;">Occasional users (no install)</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;">Manual</td>
+    <td style="padding: 8px;">7 steps</td>
+    <td style="padding: 8px;">Rare use (1-2 links/week)</td>
+  </tr>
+</table>
+
+<div style="text-align:center; margin: 40px 0;">
+  <a href="https://copy-link-markdown.vercel.app/" class="cta">Get the One-Click Extension →</a>
+  <p style="font-size:0.85rem; color:#64748b;">Free · 5KB · Zero tracking · Open source</p>
+</div>
+
+<p><a href="https://copy-link-markdown.vercel.app/">→ Back to Copy as Markdown Link homepage</a></p>
+</body>
+</html>

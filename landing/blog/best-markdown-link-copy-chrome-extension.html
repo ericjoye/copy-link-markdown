@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Markdown Link Copy Chrome Extension — Copy as Markdown Link</title>
+<meta name="description" content="Copy any page title + URL as a Markdown [title](url) link instantly. A lightweight, zero-dependency Chrome extension for developers, writers, and Obsidian users.">
+<link rel="canonical" href="https://copy-link-markdown.vercel.app/blog/best-markdown-link-copy-chrome-extension.html">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 20px; line-height: 1.7; color: #e2e8f0; background: #0f172a; }
+  h1 { font-size: 2rem; margin-bottom: 8px; }
+  h2 { font-size: 1.5rem; margin-top: 40px; }
+  p, li { color: #94a3b8; }
+  a { color: #6366f1; }
+  code { background: #1e293b; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  .cta { display: inline-block; background: #6366f1; color: #fff; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 20px 0; }
+  .meta { color: #64748b; font-size: 0.9rem; margin-bottom: 32px; }
+  pre { background: #1e293b; padding: 16px; border-radius: 8px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Best Markdown Link Copy Chrome Extension: Copy Any Page as [title](url)</h1>
+<p class="meta">Published July 23, 2026 · Product tools</p>
+
+<p>If you write in Markdown — for Obsidian notes, GitHub issues, documentation, or Slack messages — you know the friction of copying a link in Markdown format. You highlight the title, copy it. Switch to the URL bar, copy the URL. Then type <code>[</code>, paste title, type <code>](</code>, paste URL, type <code>)</code>. That's seven separate actions for one link.</p>
+
+<p>Do that 20 times a day and you've wasted 10 minutes on mechanical keystrokes. A <strong>Markdown link copy Chrome extension</strong> eliminates this entirely.</p>
+
+<h2>What Makes a Great Markdown Link Copy Extension?</h2>
+<p>After testing several approaches — bookmarks, bookmarklets, and extensions — the criteria for a good tool are:</p>
+<ul>
+  <li><strong>One-click operation:</strong> Click the toolbar icon and the link is on your clipboard. No dialogs, no confirmation boxes.</li>
+  <li><strong>Context menu support:</strong> Right-click on any page or specific link to copy it as Markdown without touching the toolbar.</li>
+  <li><strong>Title cleanup:</strong> Automatically strips site suffixes like " - YouTube", " | Medium", " — GitHub" so your links are clean.</li>
+  <li><strong>Zero bloat:</strong> No analytics, no tracking, no network calls. Just a clipboard operation.</li>
+  <li><strong>Visual feedback:</strong> You need to know it worked without alt-tabbing to check.</li>
+</ul>
+
+<h2>How Copy as Markdown Link Works</h2>
+<p><strong>Copy as Markdown Link</strong> is a Chrome extension (Manifest V3) that does exactly one thing: copy the current page's title and URL as a Markdown link. Three ways to trigger it:</p>
+<ol>
+  <li><strong>Toolbar click:</strong> Click the extension icon → <code>[Page Title](url)</code> is on your clipboard.</li>
+  <li><strong>Page context menu:</strong> Right-click anywhere → "Copy as Markdown Link".</li>
+  <li><strong>Link context menu:</strong> Right-click a specific hyperlink → "Copy link as Markdown".</li>
+</ol>
+<p>The toolbar badge flashes "Copied!" in green for 1.5 seconds so you know it worked without checking your clipboard.</p>
+
+<h2>Title Cleanup Is the Killer Feature</h2>
+<p>Raw <code>document.title</code> values are ugly. A YouTube video might be <em>"How to use Git — 2026 Tutorial - YouTube"</em>. A Medium article might be <em>"Why Tailwind CSS Wins | Medium"</em>. A GitHub PR could be <em>"Fix #142: reduce memory usage — Pull Request #143 — user/repo — GitHub"</em>.</p>
+<p>The extension strips these common suffixes automatically. No configuration needed.</p>
+
+<h2>Technical Specs</h2>
+<ul>
+  <li>~60 lines of vanilla JavaScript</li>
+  <li>Zero dependencies — pure Chrome APIs</li>
+  <li>~5KB unpacked</li>
+  <li>Permissions: <code>activeTab</code>, <code>contextMenus</code>, <code>clipboardWrite</code> only</li>
+  <li>Manifest V3 compliant</li>
+  <li>Open source under MIT License</li>
+</ul>
+
+<h2>Who Should Use It?</h2>
+<ul>
+  <li><strong>Obsidian users</strong> who paste links into daily notes</li>
+  <li><strong>GitHub maintainers</strong> writing issues, PR descriptions, and READMEs</li>
+  <li><strong>Technical writers</strong> documenting APIs and workflows</li>
+  <li><strong>Developers</strong> writing Slack messages or Notion docs with linked references</li>
+  <li><strong>Researchers</strong> collecting bookmarks and references</li>
+</ul>
+
+<div style="text-align:center; margin: 40px 0;">
+  <a href="https://copy-link-markdown.vercel.app/" class="cta">Get Copy as Markdown Link →</a>
+  <p style="font-size:0.85rem; color:#64748b;">Free download from CWS · $5 support purchase · Open source</p>
+</div>
+
+<h2>Alternatives Comparison</h2>
+<p>There are other ways to copy Markdown links, but each has tradeoffs:</p>
+<ul>
+  <li><strong>Bookmarklets:</strong> Work in any browser but require setup, no visual feedback, and don't work on Chrome's extension pages.</li>
+  <li><strong>Manual typing:</strong> Free, but costs seconds per link — adds up fast for frequent linkers.</li>
+  <li><strong>Built-in "Copy link" (browser):</strong> Only copies the raw URL, not Markdown format.</li>
+  <li><strong>Full-featured extensions:</strong> 10-50MB extensions with analytics, permissions you don't need, and features you'll never use.</li>
+</ul>
+<p>Copy as Markdown Link is the Goldilocks option: does exactly one thing, does it well, weighs 5KB, and respects your privacy.</p>
+
+<h2>Get Started</h2>
+<p>Install directly from the <a href="https://chromewebstore.google.com/detail/copy-as-markdown/fkeaekngjflipcockcnpobkpbbfbhmdn">Chrome Web Store</a>, or <a href="https://copy-link-markdown.vercel.app/copy-link-markdown.zip">download the ZIP</a> and load unpacked from <code>chrome://extensions/</code>.</p>
+<p><a href="https://copy-link-markdown.vercel.app/">→ Back to Copy as Markdown Link homepage</a></p>
+</body>
+</html>
